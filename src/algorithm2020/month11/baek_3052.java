@@ -17,11 +17,13 @@ public class baek_3052 {
         for (int i = 0; i < numArr.length; i++) {
             for (int j = i + 1; j < numArr.length; j++) {
                 if (numArr[i] == numArr[j]) {
-                    cnt++;
+                    cnt--;
+                    break;
                 }
             }
+            cnt++;
         }
-        System.out.println(numArr.length - cnt);
+        System.out.println(cnt);
 
     }
 }
