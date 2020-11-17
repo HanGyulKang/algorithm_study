@@ -10,5 +10,6 @@ public class beak_10809 {
         for (char c = 'a'; c <= 'z'; c++) {
             System.out.print(str.indexOf(c) + " ");
         }
+        scan.close();
     }
 }
