@@ -3,6 +3,8 @@ package algorithm2020.month11;
 import java.util.Scanner;
 
 public class baek_5622 {
+    // indexOf 로 다시 풀어라
+    // indexOf로 검사했을 때 있는 단어면 index를 출력하지만 없는 단어면 -1을 출력 함
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
