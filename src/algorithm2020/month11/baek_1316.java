@@ -5,6 +5,22 @@ import java.util.Scanner;
 public class baek_1316 {
     // 2020 11 28 작업중...
     public static void main(String[] args) throws Exception {
+        /*
+        Scanner scan = new Scanner(System.in);
+        String str = scan.next();
+
+        ArrayList<Integer> arrList = new ArrayList<>();
+        for(char c = 'a'; c <= 'z'; c++) {
+            for(int i = 0; i < str.length(); i++) {
+                if(str.charAt(i) == c) {
+                    arrList.add(i);
+                }
+            }
+            System.out.println(c + " : " + arrList.toString());
+            arrList.removeAll(arrList);
+        }
+        */
+
         Scanner scan = new Scanner(System.in);
 
         // a : 97, z: 122
