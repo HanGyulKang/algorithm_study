@@ -3,33 +3,12 @@ package algorithm2020.month11;
 import java.io.*;
 
 public class baek_1712 {
-    private static int checker(int aa, int bb, int cc) {
-        int resCnt = 0;
-        int a = aa;
-        int b = bb;
-        int c = cc;
-
+    private static int checker(int a, int b, int c) {
         if(b >= c) {
             return -1;
         } else {
-            int sellTotal = a;
-            int makeTotal = 0;
-            int cnt = 0;
-
-            while(true) {
-                sellTotal += b;
-                makeTotal += c;
-                System.out.println(sellTotal + " : " + makeTotal);
-                cnt++;
-
-                if(makeTotal > sellTotal) {
-                    resCnt = cnt;
-                    break;
-                }
-            }
+            return (a/(c-b))+1;
         }
-
-        return resCnt;
     }
 
     public static void main(String[] args) throws IOException {
