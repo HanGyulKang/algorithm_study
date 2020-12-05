@@ -7,7 +7,7 @@ public class baek_2839 {
         int j = 3;
         int res = 0;
 
-
+        // 공식 찾아서 짜기
         if((a % i) - j == 0) {
             res += a / i;
             res += res / j;
