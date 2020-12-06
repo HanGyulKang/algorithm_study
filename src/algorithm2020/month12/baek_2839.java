@@ -1,24 +1,35 @@
 package algorithm2020.month12;
 
+import java.util.Scanner;
+
 public class baek_2839 {
     public static void main(String[] args) {
-        int a = 21;
-        int i = 5;
-        int j = 3;
-        int res = 0;
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int answer = 0;
 
-        // 공식 찾아서 짜기
-        if((a % i) - j == 0) {
-            res += a / i;
-            res += res / j;
-        } else if (a % i == 0) {
-            res += a / i;
-        } else if (a % j == 0){
-            res += a / j;
-        } else {
-            res = -1;
+        int div5 = n/5;
+        n = n%5;
+        int div3 = n/3;
+        n = n%3;
+
+        while(true) {
+            if(div5 < 0) {
+                System.out.println(-1);
+                break;
+            }else if(n == 0){
+                answer = div5 + div3;
+                System.out.println(answer);
+                break;
+            }else {
+                n += 5;
+                n += div3*3;
+                div3 = 0;
+                div5--;
+                div3 = n/3;
+                n = n%3;
+            }
         }
-        System.out.println(res);
 
     }
 }
