@@ -1,21 +1,29 @@
 package algorithm2020.month12;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class baek_2751 {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int N = scan.nextInt();
-        int[] arr = new int[N];
+        int N = Integer.parseInt(br.readLine());
 
+        ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            arr[i] = scan.nextInt();
+            arr.add(Integer.parseInt(br.readLine()));
         }
-        Arrays.sort(arr);
-        for (int i = 0; i < N; i++) {
-            System.out.println(arr[i]);
+        br.close();
+
+        Collections.sort(arr);
+        StringBuffer sb = new StringBuffer();
+        for (Integer i : arr) {
+            sb.append(i + "\n");
         }
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw.write(sb.toString());
+
+        bw.flush();
     }
 }
