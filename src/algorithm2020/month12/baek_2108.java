@@ -1,49 +1,127 @@
 package algorithm2020.month12;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class baek_2108 {
+    // 순서대로 정렬
+    public static int[] sort(int n, int[] arr) {
+        int N = n;
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if(j == N - 1) {
+                    break;
+                } else if(arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
 
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(reader.readLine());
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        double total = 0;
+
+        if(N == 1) {
+            int a = scan.nextInt();
+            System.out.println(a);
+            System.out.println(a);
+            System.out.println(a);
+            System.out.println(a - a);
+            return;
+        } else if(N < 1) {
+            throw new Exception("최초 입력값이 잘못되었습니다.");
+        }
+
         int[] arr = new int[N];
-        int[] check = new int[8001];
-        int sum = 0;
+        for (int i = 0; i < N; i++) {
+            arr[i] = scan.nextInt();
+            total += arr[i];
+        }
+        scan.close();
 
-        for(int i=0 ; i<N ; i++){
-            arr[i] =  Integer.parseInt(reader.readLine());
-            // 최빈값 중 두 번째로 작은 값을 출력하기 위해 수가 몇 번 나왔는지 배열로 카운트
-            check[arr[i]+4000]++;
-            sum += arr[i];
+        // 평균값 구하기
+        double avg = total / N;
+        System.out.println(Math.round(avg));
+
+        // 순서대로 정렬 후 중간 값 구하기
+        int[] sortArr = sort(N, arr);
+        System.out.println(sortArr[N / 2]);
+
+        // 최빈값 구하기
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < N; i++) {
+            // 해쉬맵 초기값 입력
+            hashMap.put(arr[i], 0);
         }
 
-        //  ArrayList를 사용해 여러 개의 최빈값을 저장
-        int maxIndex = 0;
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i=0 ; i<8001 ; i++){
-            if(check[maxIndex] < check[i]){
-                maxIndex = i;
-                list.clear();
-            }
-            else if(check[i]!=0 && check[i]==check[maxIndex]){
-                list.add(i-4000);
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int i = 0; i < N; i++) {
+            if(hashMap.containsKey(arr[i])) {
+                hashMap.put(arr[i], hashMap.get(arr[i] + 1));
+                hashSet.add(arr[i]);
             }
         }
 
-        Arrays.sort(arr);
+        int max = 0;
+        for (Integer integer : hashSet) {
+            for (int i = 0; i < hashSet.size(); i++) {
+                if(hashMap.get(integer) > max) {
+                    max = hashMap.get(integer);
+                }
+            }
+        }
 
-        // 소수점 이하 첫째 자리에서 반올림
-        System.out.println((int)Math.round((double)sum/N));
-        System.out.println(arr[N/2]);
-        if(list.size()!=0)
-            System.out.println(list.get(0));
-        else
-            System.out.println(maxIndex-4000);
-        System.out.println(arr[N-1]-arr[0]);
+        ArrayList<Integer> arrList = new ArrayList<>();
+        for (Integer integer : hashSet) {
+            if(hashMap.get(integer) == max) {
+                arrList.add(integer);
+            }
+        }
+
+        int[] arr2 = new int[arrList.size()];
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = arrList.get(i);
+        }
+
+        arr2 = sort(arr2.length, arr2);
+
+        if(arr2.length < 2) {
+            System.out.println(arr2[arr2.length - 1]);
+        } else {
+            System.out.println(arr2[arr2.length - (arr2.length - 1)]);
+        }
+
+        // 최대값과 최소값 차이 구하기
+        int interval = sortArr[sortArr.length - 1] - sortArr[0];
+        System.out.println(interval);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
