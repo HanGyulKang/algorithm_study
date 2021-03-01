@@ -1,4 +1,4 @@
-package algorithm2021.month02;
+package algorithm2021.month03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
