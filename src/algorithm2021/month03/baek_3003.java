@@ -15,7 +15,7 @@ public class baek_3003 {
 
         for (int i = 0; i < checkArr.length; i++) {
             int a = Integer.parseInt(str[i]);
-            bw.write(String.valueOf(checkArr[i] - a) + " ");
+            bw.write((checkArr[i]) - a + " ");
         }
         bw.flush();
         br.close();
