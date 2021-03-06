@@ -9,4 +9,3 @@ public class baek_11283 {
         System.out.println(c - 44031);
     }
 }
-
