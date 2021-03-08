@@ -17,8 +17,6 @@ public class baek_14928 {
             a *= 10;
             a += num;
             a %= NUM;
-            System.out.println(num + " / " + a);
-
         }
         System.out.println(a);
     }
