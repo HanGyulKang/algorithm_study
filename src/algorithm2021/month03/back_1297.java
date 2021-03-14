@@ -16,7 +16,7 @@ public class back_1297 {
         long h = b * b;
         long w = c * c;
 
-        double res = (double)(hypotenuse / (h + w));
+        double res = (double)hypotenuse / (double)(h + w);
 
         int height = (int)(Math.sqrt(res * h));
         int width = (int)(Math.sqrt(res * w));
