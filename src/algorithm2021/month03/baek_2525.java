@@ -2,7 +2,7 @@ package algorithm2021.month03;
 
 import java.util.Scanner;
 
-public class back_2525 {
+public class baek_2525 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int h = scan.nextInt();

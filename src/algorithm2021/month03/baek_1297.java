@@ -2,7 +2,7 @@ package algorithm2021.month03;
 
 import java.io.*;
 
-public class back_1297 {
+public class baek_1297 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
