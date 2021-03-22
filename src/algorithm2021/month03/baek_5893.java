@@ -15,5 +15,6 @@ public class baek_5893 {
             num *= 2;
         }
         System.out.println(sum * 17);
+        System.out.println(Integer.toBinaryString(sum * 17));
     }
 }
