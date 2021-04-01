@@ -10,23 +10,27 @@ public class findGG {
         }
 
         int cnt = 0;
-        int size = 0;
-        int[] arr = new int[10];
+        int idx = 0;
+        int[] arr = new int[100];
+
         for(int i = 0; i < str.length(); i++) {
             if('g' == str.charAt(i)) {
                 cnt++;
             }
+
             if('g' != str.charAt(i)) {
-                arr[size] = cnt;
+                arr[idx] = cnt;
                 cnt = 0;
-                size++;
+                idx++;
             }
+
             if(i == str.length() - 1) {
                 if(str.charAt(i) == 'g') {
-                    arr[size] = cnt;
+                    arr[idx] = cnt;
                 }
             }
         }
+
         for (int i = 0; i < arr.length; i++) {
             if(arr[i] == 1) {
                 return false;
@@ -36,7 +40,7 @@ public class findGG {
     }
 
     public static void main(String[] args) {
-        System.out.println(gHappy("xxgggxyg"));
+        System.out.println(gHappy("gggggaaggggaggaaag"));
     }
 
 }
