@@ -1,9 +1,14 @@
 package algorithm2021.month03;
 
+import java.util.Scanner;
+
 public class baek_5893 {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String getStr = scan.next();
+
         StringBuffer sb = new StringBuffer();
-        sb.append("10110111").reverse();
+        sb.append(getStr).reverse();
         String str = sb.toString();
 
         int num = 1;
