@@ -3,22 +3,23 @@ package algorithm2021.month05;
 import java.util.Scanner;
 
 public class baek_10162 {
-    private static int getCnt(int T) {
-        if(T % 10 != 0) {
-            return -1;
+    private static String getCnt(int T) {
+        int a = 0, b = 0, c = 0;
+
+        while(T >= 10){
+            if(T >= 300) {
+                T -= 300;
+                a++;
+            } else if(T >= 60) {
+                T -= 60;
+                b++;
+            } else if(T >= 10) {
+                T -= 10;
+                c++;
+            }
         }
 
-        int A = 300; // 5분
-        int B = 60;
-        int C = 10;
-
-        int cnt = 0;
-        int modNum = 0;
-
-
-
-
-        return 0;
+        return T % 10 > 0 ? "-1" : a + " " + b + " " + c;
     }
 
     public static void main(String[] args) {
