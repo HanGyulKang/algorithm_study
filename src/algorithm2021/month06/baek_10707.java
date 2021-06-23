@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.Scanner;
 
 public class baek_10707 {
+    /**
+     * https://velog.io/@gang6607/백준-10707-수도요금
+     */
     public static void main(String[] args) throws IOException {
         // 입력 받을 Scanner 선언
         Scanner scan = new Scanner(System.in);
