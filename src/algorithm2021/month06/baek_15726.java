@@ -2,7 +2,7 @@ package algorithm2021.month06;
 
 import java.util.Scanner;
 
-public class back_15726 {
+public class baek_15726 {
     /**
      * https://velog.io/@gang6607/백준-15726-이칙연산-qaafnl61
      */
