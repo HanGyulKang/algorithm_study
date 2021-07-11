@@ -2,6 +2,9 @@ package algorithm2021.month07;
 
 import java.util.Scanner;
 
+/**
+ * N을 입력받은 후 1 + 1/2 + 1/3 +... + 1/N의 값을 출력하세요.
+ */
 public class MaeilCoding0712_01 {
 
     private static float process(int N) {
@@ -15,9 +18,6 @@ public class MaeilCoding0712_01 {
     }
 
     public static void main(String[] args) {
-        /**
-         * N을 입력받은 후 1 + 1/2 + 1/3 +... + 1/N의 값을 출력하세요.
-         */
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
 
