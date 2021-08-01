@@ -1,8 +1,8 @@
-package algorithm2021.month08;
+package InflearnJavaClass2021;
 
 import java.util.Scanner;
 
-public class InflearnJavaAlgorithm001 {
+public class Main001 {
     // 문제풀이 함수
     public int solution(String str, char c, boolean flag) {
         int res = 0;
@@ -33,7 +33,7 @@ public class InflearnJavaAlgorithm001 {
     }
 
     public static void main(String[] args) {
-        InflearnJavaAlgorithm001 C = new InflearnJavaAlgorithm001();
+        Main001 C = new Main001();
 
         // Scanner 객체 생성
         Scanner scan = new Scanner(System.in);
