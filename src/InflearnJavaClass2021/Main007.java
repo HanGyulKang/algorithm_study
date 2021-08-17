@@ -3,6 +3,21 @@ package InflearnJavaClass2021;
 import java.util.Scanner;
 
 public class Main007 {
+    private String solution_02(String str) {
+        String answer = "YES";
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+
+        String temp = str;
+        str = sb.reverse().toString();
+
+        if(!temp.equals(str)) {
+            answer = "NO";
+        }
+
+        return answer;
+    }
+
     private String solution_01(String str) {
         String answer = "YES";
         char[] s = str.toCharArray();
@@ -24,8 +39,10 @@ public class Main007 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        Main007 T = new Main007();
         String str = scan.next().toUpperCase();
 
-        System.out.println(new Main007().solution_01(str));
+        System.out.println(T.solution_01(str));
+        System.out.println(T.solution_02(str));
     }
 }
