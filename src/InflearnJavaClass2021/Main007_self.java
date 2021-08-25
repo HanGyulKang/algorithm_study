@@ -2,7 +2,7 @@ package InflearnJavaClass2021;
 
 import java.util.Scanner;
 
-public class Main007 {
+public class Main007_self {
     private String solution_02(String str) {
         String answer = "YES";
         StringBuilder sb = new StringBuilder();
@@ -39,7 +39,7 @@ public class Main007 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Main007 T = new Main007();
+        Main007_self T = new Main007_self();
         String str = scan.next().toUpperCase();
 
         System.out.println(T.solution_01(str));
