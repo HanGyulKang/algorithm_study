@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main007_teach {
     public static String solution_01(String str) {
-        String answer = "YES";
         int len = str.length();
 
         for(int i = 0; i < len / 2; i++) {
@@ -14,12 +13,23 @@ public class Main007_teach {
             }
         }
 
-        return answer;
+        return "YES";
+    }
+
+    public static String solution_02(String str) {
+        String tmp = new StringBuilder(str).reverse().toString();
+
+        if(str.equalsIgnoreCase(tmp)) { // 대소문자 구분 x
+            return "YES";
+        }
+
+        return "NO";
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
         System.out.println(solution_01(str.toUpperCase()));
+        System.out.println(solution_02(str));
     }
 }
