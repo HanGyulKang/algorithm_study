@@ -23,9 +23,8 @@ public class Main010_self {
                 p = 0;
             }
 
-            if(arr[i] > p) {
-                arr[i] = p;
-            }
+            // 두 수를 비교해서 크거나 작은 수를 넣으려면 if문보다는 Math클래스의 min 또는 max함수를 이용하자...
+            arr[i] = Math.min(arr[i], p);
         }
 
         for(int i : arr) {
