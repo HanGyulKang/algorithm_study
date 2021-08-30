@@ -2,7 +2,7 @@ package InflearnJavaClass2021;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main012_self {
     private static final int DIVNUM = 7;
 
     private String solution(String str) {
@@ -26,7 +26,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
 
-        Main Obj = new Main();
+        Main012_self Obj = new Main012_self();
         System.out.println(Obj.solution(str));
 
         scan.close();
