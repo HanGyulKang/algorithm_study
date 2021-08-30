@@ -8,8 +8,7 @@ public class Main012_self {
     private String solution(String str) {
         String answer = "";
 
-        str = str.replace("#", "1");
-        str = str.replace("*", "0");
+        str = str.replace("#", "1").replace("*", "0");
 
         String tmp = "";
         for (int i = 0; i < str.length(); i++) {
