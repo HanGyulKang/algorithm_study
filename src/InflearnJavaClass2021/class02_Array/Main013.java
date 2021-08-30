@@ -1,9 +1,9 @@
-package InflearnJavaClass2021;
+package InflearnJavaClass2021.class02_Array;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main013 {
     public ArrayList<Integer> solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
 
@@ -26,7 +26,7 @@ public class Main {
             arr[i] = scan.nextInt();
         }
 
-        Main T = new Main();
+        Main013 T = new Main013();
         for(int n : T.solution(cnt, arr)) {
             System.out.print(n + " ");
         }

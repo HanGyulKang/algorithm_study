@@ -1,4 +1,4 @@
-package InflearnJavaClass2021;
+package InflearnJavaClass2021.class01_String;
 
 import java.io.*;
 import java.util.Scanner;
