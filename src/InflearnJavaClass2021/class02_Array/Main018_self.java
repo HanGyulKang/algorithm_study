@@ -9,8 +9,8 @@ public class Main018_self {
             return false;
         }
 
-        // 1과 자기 자신을 제외한 값으로 소수인지 체크 : 나누어지는 수가 하나라도 있으면 소수x
-        for (int i = 2; i < num; i++) {
+        // 1과 자기 자신을 제외한 나머지 숫자로 소수 판별 : 나누어 떨어지면 소수x
+        for(int i = 2; i < num; i++) {
             if(num % i == 0) {
                 return false;
             }
@@ -19,7 +19,7 @@ public class Main018_self {
         return true;
     }
 
-    private ArrayList<Integer> solution(int[] arr) {
+    public ArrayList<Integer> solution(int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
@@ -33,7 +33,7 @@ public class Main018_self {
                 temp = temp / 10;
             }
 
-            // 소수 확인
+            // 이미 해당 메소드를 호출할 때 해당 클래스 객체가 선언되어 있기 때문에 static 메소드가 아니어도 호출 가능
             if(isPrime(res)) {
                 answer.add(res);
             }
@@ -45,9 +45,9 @@ public class Main018_self {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        int[] arr = new int[n];
 
-        for (int i = 0; i < arr.length; i++) {
+        int[] arr = new int[n];
+        for(int i = 0; i < arr.length; i++) {
             arr[i] = scan.nextInt();
         }
 
