@@ -4,16 +4,16 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Main003 {
-	private String solution_re01(String str) {
-		String answer = ""; // 문자열 최소길이 0 보장
-		
-		for(String x : str.split(" ")) { // for each로 공백을 끊음
-			if(x.length() > answer.length()) { // 전 문자열과 현재 문자열 길이 바로 비교
-				answer = x; // 전 문자열보다 현재 문자열 길이가 더 길면 넣기
-			}
+    private String solution_re01(String str) {
+	String answer = ""; // 문자열 최소길이 0 보장
+
+	for(String x : str.split(" ")) { // for each로 공백을 끊음
+		if(x.length() > answer.length()) { // 전 문자열과 현재 문자열 길이 바로 비교
+			answer = x; // 전 문자열보다 현재 문자열 길이가 더 길면 넣기
 		}
-		return answer;
-	}    
+	}
+	return answer;
+    }    
     
     public static String solution_self(String str) {
         String[] strArr = str.split(" ");
