@@ -33,7 +33,9 @@ public class Main021_self {
         arrList.add(tmp_left_diag);
         arrList.add(tmp_right_diag);
 
+        // 최대값을 구하기 위해 정렬
         Collections.sort(arrList);
+        // size - 1로 마지막 index의 value를 추출(최대값)
         answer = arrList.get(arrList.size() - 1);
 
         return answer;
