@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Main003 {
-    private String solution_re01(String str) {
+    private static String solution_re01(String str) {
 	String answer = ""; // 문자열 최소길이 0 보장
 
 	for(String x : str.split(" ")) { // for each로 공백을 끊음

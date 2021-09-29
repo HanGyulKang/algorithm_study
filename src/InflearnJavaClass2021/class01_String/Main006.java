@@ -29,6 +29,7 @@ public class Main006 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.next();
+        Main006 T = new Main006();
 
         System.out.println(solution(str));
         System.out.println(T.solution_self(str));
