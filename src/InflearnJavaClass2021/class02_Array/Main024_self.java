@@ -5,14 +5,13 @@ import java.util.Scanner;
 public class Main024_self {
     public int solution(int n, int m, int[][] arr) {
         int answer = 0;
+        int A = 0, B = 0;
 
         for (int i = 1; i <= n; i++) { // A학생
             for (int j = 1; j <= n; j++) { // B학생
                 int cnt = 0;
 
                 for (int k = 0; k < m; k++) { // 시험회차
-                    int A = 0, B = 0;
-
                     for (int l = 0; l < n; l++) { // 등수
                         // A학생의 등수 입력
                         if(arr[k][l] == i) A = l;
