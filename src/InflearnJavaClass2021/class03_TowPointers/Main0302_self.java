@@ -21,8 +21,10 @@ public class Main0302_self {
                 answer.add(a[p1++]);
                 p2++;
             // 강의 들은 후 조건 추가...
+            // a배열 탐색
             } else if(a[p1] < b[p2]) {
                 p1++;
+            // b배열 탐색
             } else {
                 p2++;
             }
