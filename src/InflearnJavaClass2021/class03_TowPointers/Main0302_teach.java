@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main0302_self {
+public class Main0302_teach {
     private ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {
         ArrayList<Integer> answer = new ArrayList<>();
 
@@ -20,12 +20,12 @@ public class Main0302_self {
             if(a[p1] == b[p2]) {
                 answer.add(a[p1++]);
                 p2++;
-            // 강의 들은 후 조건 추가...
             } else if(a[p1] < b[p2]) {
                 p1++;
             } else {
                 p2++;
             }
+
         }
 
         return answer;
@@ -46,7 +46,7 @@ public class Main0302_self {
             arr_B[i] = scan.nextInt();
         }
 
-        Main0302_self T = new Main0302_self();
+        Main0302_teach T = new Main0302_teach();
         for(int x : T.solution(n, m, arr_A, arr_B)) {
             System.out.print(x + " ");
         }
