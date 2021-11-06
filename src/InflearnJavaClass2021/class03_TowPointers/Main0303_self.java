@@ -3,6 +3,23 @@ package InflearnJavaClass2021.class03_TowPointers;
 import java.util.Scanner;
 
 public class Main0303_self {
+    public int solution(int n, int k, int[] arr) {
+        int answer = 0;
+
+        for(int i = 0; i < k; i++) {
+            answer += arr[i];
+        }
+
+        int temp = answer;
+        for(int i = k; i < n; i++) {
+            // Sliding Window
+            temp += arr[i] - arr[i - k];
+            answer = Math.max(answer, temp);
+        }
+
+        return answer;
+    }
+
     public int solution_TimeLimit(int n, int k, int[] arr) {
         int answer = 0;
 
@@ -58,8 +75,11 @@ public class Main0303_self {
         }
 
         Main0303_self T = new Main0303_self();
-        // 정답은 나오는데... 왤까
+        // O(n2) = n * k
         System.out.println(T.solution_runtimeErr(n, k, arr));
         System.out.println(T.solution_TimeLimit(n, k, arr));
+
+        // 설명만 듣고 풀기
+        System.out.println(T.solution(n, k, arr));
     }
 }
