@@ -58,6 +58,7 @@ public class Main0303_self {
         }
 
         Main0303_self T = new Main0303_self();
+        // 정답은 나오는데... 왤까
         System.out.println(T.solution_runtimeErr(n, k, arr));
         System.out.println(T.solution_TimeLimit(n, k, arr));
     }
