@@ -7,6 +7,7 @@ public class Main0304_self {
         int answer = 0;
         int pointer = 0;
 
+        // O(n2)으로 좋지 않다...
         while(pointer < n) {
             int sum = 0;
 
