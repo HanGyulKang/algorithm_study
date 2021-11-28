@@ -1,64 +1,59 @@
+import java.util.Scanner;
+
 public class DailyTraining {
     public static void main(String[] args) {
-        int SIZE = 5;
+        Scanner scan = new Scanner(System.in);
+        int n = 10;
+        int[][] arr = new int[2][n];
 
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        // 기준이 되는 x, y값을 받는다.
+        int A_x = scan.nextInt();
+        int A_y = scan.nextInt();
 
-        System.out.println();
+        // 기준 값과 거리 비교를 할 x, y값을 받는다.
+        // 이 때, 이미 들어온 좌표값이 있을 경우 메시지를 출력하고 입력을 다시 받는다.
+        for(int i = 0; i < n; i++) {
+            int x = scan.nextInt();
+            int y = scan.nextInt();
 
-        for (int i = SIZE; i > 0; i--) {
-            for (int j = i; j > 0; j--) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+            boolean flag = false;
 
-        System.out.println();
-
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if(j >= i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
+            for(int j = 0; j < n; j++) {
+                if(arr[0][j] == x && arr[1][j] == y) {
+                    // 똑같은 값이 들어올 경우 메시지
+                    System.out.println("똑같은 좌표가 이미 있습니다.");
+                    flag = true;
                 }
             }
-            System.out.println();
+
+            // 똑같은 값이 들어오면 i를 빼주고(원위치) for문 시작지점으로 간다(continue).
+            if(flag) {
+                i--;
+                continue;
+            }
+
+            // 위 if문에 걸리지 않았으면 배열에 좌표값을 넣는다.
+            arr[0][i] = x;
+            arr[1][i] = y;
         }
 
-        System.out.println();
+        // 받은 좌표값 중 기준 좌표와 가장 가까운(먼저 들어온) 좌표를 출력한다.
+        int min = Integer.MAX_VALUE;
+        int res = 0;
+        for(int i = 0; i < n; i++) {
+            // (들어온 좌표 x - 기준 좌표 x) + (들어온 좌표 y - 기준 좌표 y) : 절대값을 사용하여 거리값을 구한다.
+            int m = Math.abs(arr[0][i] - A_x) + Math.abs(arr[1][i] - A_y);
 
-        for (int i = SIZE - 1; i >= 0 ; i--) {
-            for (int j = 0; j < SIZE; j++) {
-                if(j >= i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
-                }
+            // 가장 작은 값(min)보다 작은 값이 들어올 경우
+            if(min > m) {
+                // min보다 작은 값을 min에 다시 넣어준다.
+                min = m;
+                // 최소값이 들어온 좌표를 저장한다.
+                res = i;
             }
-            System.out.println();
         }
 
-        System.out.println();
-
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = SIZE - 1; j >= 0; j--) {
-                if(j <= i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
-                }
-            }
-            for (int j = 0; j < i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-
+        // 최소값이 들어온 좌표를 출력한다.
+        System.out.println(arr[0][res] + ", " + arr[1][res]);
     }
 }
