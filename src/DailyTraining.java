@@ -13,6 +13,8 @@ public class DailyTraining {
         // 기준 값과 거리 비교를 할 x, y값을 받는다.
         // 이 때, 이미 들어온 좌표값이 있을 경우 메시지를 출력하고 입력을 다시 받는다.
         for(int i = 0; i < n; i++) {
+            System.out.println((i + 1) + "번째 좌표값 입력 : ");
+
             int x = scan.nextInt();
             int y = scan.nextInt();
 
