@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DailyTraining {
+public class YouRa_Homework {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = 10;
