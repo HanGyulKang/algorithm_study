@@ -2,7 +2,7 @@ package InflearnJavaClass2022.class03_TowPointers;
 
 import java.util.Scanner;
 
-public class Main0305_teach {
+public class Main0305_teach_01 {
     public static int solution(int n) {
         int answer = 0;
         int cnt = 1;
