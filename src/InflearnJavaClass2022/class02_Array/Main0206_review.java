@@ -35,6 +35,7 @@ public class Main0206_review {
             int prime = 0;
 
             // 받은 숫자의 첫 번째 자리 수를 꺼내고 10으로 나누어서 첫 번째 자리 수를 날림 : 반복
+            /*
             while(k > 0) {
                 // 첫 번째 자리 수 꺼냄
                 int chk = k % 10;
@@ -50,6 +51,13 @@ public class Main0206_review {
                     // * 10을 하여 다음 숫자가 들어올 자리를 마련함
                     prime *= 10;
                 }
+            }*/
+
+            // 앞으론 이렇게 세 줄로 끝내라
+            while(k > 0) {
+                int chk = k % 10;
+                prime = prime * 10 + chk;
+                k = k / 10;
             }
 
             if(T.chkPrimeNumber(prime)) {
