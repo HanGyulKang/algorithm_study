@@ -8,19 +8,21 @@ public class Main0205_review {
     private int sieveOfEratosthenes(int n) {
         int answer = 0;
 
-        // index가 n번까지 생겨야하기 때문에 n + 1로 초기화 한다.
+        // 소수 체크할 배열
         int[] arr = new int[n + 1];
 
-        // 반복문을 돌면서 arr[i]의 배수를 체크한다.
-        for (int i = 2; i <= n; i++) {
-            // 체크가 안 된(값이 0인) 경우 소수
-            if (arr[i] == 0) {
+        // 2 미만은 체크하는 의미가 없음(소수)
+        for (int i = 2; i < n; i++) {
+            // 들어오는 i값의 배수는 모두 소수가 아님
+            // 소수일 경우 배열 값을 0으로 내버려둠, 소수일 경우 1로 변경
+            if(arr[i] == 0) {
+                // 0인채로 남아있다면 소수
                 answer++;
 
-                // j + i로 J를 증가시킨다(예 : i = 2 / j = 2 / j = 2 + 2)
-                // 위와 같은 조건으로 i의 배수를 탐색하여 체크한다(값을 1로 변경)
-                for (int j = i; j <= n; j = j + i) {
-                    // 배수 index를 1로 초기화
+                // 에라토스테네스 체
+                // j = j + i로 사실 i에 i를 계속 누적한다(즉, i의 배수를 체로 추려내는 개념)
+                for(int j = i; j < n; j = j + i) {
+                    // i의 배수인 경우는 모두 소수가 아니기 때문에 값을 1로 변경한다.
                     arr[j] = 1;
                 }
             }
