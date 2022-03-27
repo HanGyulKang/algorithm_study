@@ -2,7 +2,7 @@ package algorithm2022.month03;
 
 import java.util.Scanner;
 
-public class baek_14264 {
+public class Baek_14264 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double n = scan.nextDouble();
