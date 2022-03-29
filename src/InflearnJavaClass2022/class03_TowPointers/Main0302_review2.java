@@ -1,5 +1,7 @@
 package InflearnJavaClass2022.class03_TowPointers;
 
+import util.ArrayUtil;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -38,17 +40,16 @@ public class Main0302_review2 {
     }
 
     public static void main(String[] args) {
-        Main0301_review2 T = new Main0301_review2();
+        // 매번 배열에 값 넣는 코드 짜는게 번거로워서 Util Class로 따로 뺌
+        ArrayUtil util = new ArrayUtil();
 
-        Scanner scan = new Scanner(System.in);
-
-        int n = scan.nextInt();
+        int n = util.scan.nextInt();
         int[] arrA = new int[n];
-        T.valueToArray(n, arrA);
+        util.valueToArray(n, arrA);
 
-        int m = scan.nextInt();
+        int m = util.scan.nextInt();
         int[] arrB = new int[m];
-        T.valueToArray(m, arrB);
+        util.valueToArray(m, arrB);
 
         for(int x : solution(n, arrA, m, arrB)) {
             System.out.print(x + " ");
