@@ -1,4 +1,5 @@
 # Project exclude paths
 /out/
-/src/algorithm2020/Test.java
-/src/algorithm2021/Test.java
+/src/basic/algorithm2020/Test.java
+/src/basic/algorithm2021/Test.java
+./.idea
