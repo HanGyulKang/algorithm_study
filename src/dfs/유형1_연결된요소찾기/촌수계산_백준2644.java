@@ -13,11 +13,18 @@ public class 촌수계산_백준2644 {
     static boolean visited[];
     static int N, M, start, end, answer;
 
-    public static void dfs() {
-        answer = -1;
-        visited[start] = true;
+    public static void dfs(int idx, int count) {
+        visited[idx] = true;
+        if(idx == end) {
+            answer = count;
+            return;
+        }
 
-        dfs();
+        for(int i = 1; i <= N; i++) {
+            if(!visited[i] && graph[idx][i]) {
+                dfs(i, count + 1);
+            }
+        }
     }
 
 
@@ -35,6 +42,7 @@ public class 촌수계산_백준2644 {
 
         graph = new boolean[MAX][MAX];
         visited = new boolean[MAX];
+        answer = -1;
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
@@ -43,8 +51,10 @@ public class 촌수계산_백준2644 {
             graph[y][x] = true;
         }
 
-        dfs();
+        dfs(start, 0);
 
+        bw.write(String.valueOf(answer));
         br.close();
+        bw.close();
     }
 }
