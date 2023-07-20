@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class 유기농배추 {
-    final static int MAX = 10 + 10;
+    final static int MAX = 50 + 10;
     static int M, N, K;
     static boolean[][] map;
     static boolean[][] visited;
