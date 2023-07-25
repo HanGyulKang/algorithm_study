@@ -13,8 +13,25 @@ public class 침투_백준13565 {
     static boolean visited[][];
     static int dirY[] = {-1, 1, 0, 0};
     static int dirX[] = {0, 0, -1, 1};
-    static int N, M, K;
+    static int N, M;
     static boolean answer = false;
+
+    static void dfs_without_visited(int y , int x) {
+        if(y == N) {
+            answer = true;
+            return;
+        }
+
+        map[y][x] = false;
+        for(int i = 0; i < 4; i++) {
+            int newY = y + dirY[i];
+            int newX = x + dirX[i];
+
+            if(map[newY][newX]) {
+                dfs(newY, newX);
+            }
+        }
+    }
 
     static void dfs(int y, int x) {
         if(y == N) {
@@ -53,7 +70,7 @@ public class 침투_백준13565 {
 
         for (int i = 1; i <= M; i++) {
             if(map[1][i]) {
-                dfs(1, i);
+                dfs_without_visited(1, i);
             }
         }
 
