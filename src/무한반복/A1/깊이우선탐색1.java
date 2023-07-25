@@ -1,11 +1,11 @@
-package 무한반복;
+package 무한반복.A1;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class 깊이우선탐색1_1 {
+public class 깊이우선탐색1 {
     /**
      * 기존 풀이방식대로 풀었을 경우 MAX치를 문제에서 제시한 100000 건으로 
      * ArrayList 객체를 생성하다보니 RuntimeError가 발생
