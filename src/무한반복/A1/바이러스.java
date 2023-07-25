@@ -12,7 +12,7 @@ public class 바이러스 {
     static void dfs(int computerNumber) {
         visited[computerNumber] = true;
 
-        for(int i = 1; i < N; i++) {
+        for(int i = 1; i <= N; i++) {
             if(!visited[i] && graph[computerNumber][i]) {
                 answer++;
                 dfs(i);
@@ -29,7 +29,6 @@ public class 바이러스 {
 
         graph = new boolean[N + 1][N + 1];
         visited = new boolean[N + 1];
-        answer = 0;
 
         // garph 정보를 입력
         int x, y;
