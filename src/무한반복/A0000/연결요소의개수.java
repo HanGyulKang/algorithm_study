@@ -1,4 +1,4 @@
-package 무한반복.A0;
+package 무한반복.A0000;
 
 import java.io.*;
 import java.util.StringTokenizer;
