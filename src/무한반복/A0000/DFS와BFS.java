@@ -66,5 +66,7 @@ public class DFS와BFS {
 
         dfs(V);
         bfs();
+
+        br.close();
     }
 }
