@@ -11,7 +11,6 @@ public class 바닥장식_백준1388 {
     static char[][] map;
     static boolean[][] visited;
     static int N, M;
-    static int answer;
 
 
     static void dfs(int y, int x) {
