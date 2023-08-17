@@ -13,16 +13,34 @@ public class 바닥장식 {
     static int ROW, COL;
     static int answer;
 
+    static 바닥장식.바닥장식util util = new 바닥장식.바닥장식util();
+
+    static class 바닥장식util {
+        boolean isHorizontal(char current, char next) {
+            return current == HORIZONTAL && next == HORIZONTAL;
+        }
+
+        boolean isVertical(char current, char next) {
+            return current == VERTICAL && next == VERTICAL;
+        }
+
+        boolean isAlreadyChecked(char floor) {
+            return floor == CHECKED;
+        }
+    }
 
     public static void dfs(int row, int col) {
         char currentFloor = map[row][col];
         map[row][col] = CHECKED;
 
-        if(currentFloor == HORIZONTAL && map[row][col + 1] == HORIZONTAL) {
+        char nextHorizontalValue = map[row][col + 1];
+        char nextVerticalValue = map[row + 1][col];
+
+        if (util.isHorizontal(currentFloor, nextHorizontalValue)) {
             dfs(row, col + 1);
         }
 
-        if(currentFloor == VERTICAL && map[row + 1][col] == VERTICAL) {
+        if (util.isVertical(currentFloor, nextVerticalValue)) {
             dfs(row + 1, col);
         }
     }
@@ -47,7 +65,7 @@ public class 바닥장식 {
         answer = 0;
         for (int i = 1; i <= ROW; i++) {
             for (int j = 1; j <= COL; j++) {
-                if(map[i][j] != CHECKED) {
+                if (!util.isAlreadyChecked(map[i][j])) {
                     answer++;
                     dfs(i, j);
                 }
