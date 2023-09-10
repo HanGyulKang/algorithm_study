@@ -82,6 +82,7 @@ public class 쩜프왕젤리 {
 
     private static int[][] initializeMapSize(String input) {
         dataSize = Integer.parseInt(input);
-        return new int[dataSize + Components.BUFFER_SIZE.getValue()][dataSize + Components.BUFFER_SIZE.getValue()];
+        int setSize = dataSize + Components.BUFFER_SIZE.getValue();
+        return new int[setSize][setSize];
     }
 }
